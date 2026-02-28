@@ -32,6 +32,10 @@
 	max-width: 100vw;
 }
 
+.app .present {
+	animation: appearTxt 0.5s ease-out forwards;
+}
+
 .appicon,
 .present img {
 	border-radius: 22%;
@@ -294,5 +298,16 @@
 	.platforms {
 		gap: 4vw;
 		flex-direction: column;
+	}
+}
+
+@keyframes appearTxt {
+	0% {
+		opacity: 0;
+		transform: translateY(5vh);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
