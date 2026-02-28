@@ -1,0 +1,236 @@
+:root {
+    --qc: #ff9c0b;
+    --tc: #fca41f;
+    --sc: #f9aa33;
+    --fc: #f8ae3f;
+
+    --platform-width: 20vw;
+	--platform-height: 30vh;
+}
+
+body {
+    background: radial-gradient(
+        circle at 10% 20%,
+        var(--fc) 0px,
+        var(--sc) 70px,
+        var(--tc) 150px,
+        var(--qc) 500px
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, a, p, button {
+    text-shadow: 0px 0px 20px #00000030;
+    opacity: 0.8;
+}
+
+p {
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+a {
+    color: #fff;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.warn {
+    background: #fff;
+    color: var(--qc);
+    padding: 10px !important;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 4em 0;
+}
+
+.app .name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.app .name img {
+    width: 150px;
+    height: 150px;
+    opacity: 0.8;
+}
+
+.app .name h1 {
+    font-size: 60px;
+}
+
+.app h2 {
+    text-align: center;
+}
+
+.h-carousel {
+    overflow: scroll hidden;
+    width: 100vw;
+}
+
+.v-carousel {
+    overflow: hidden scroll;
+    height: 100vw;
+}
+
+.h-carousel, .v-carousel {
+    display: flex;
+    padding: 0 10px;
+}
+
+.h-carousel.auto, .v-carousel.auto {
+    overflow: hidden !important;
+}
+
+.h-carousel img, .v-carousel img {
+    width: 15vw;
+}
+
+.h-carousel.auto {
+    --carousel-duration: 24s;
+    --carousel-gap: 10px;
+    --carousel-cycle-width: 0px;
+    --carousel-play-state: running;
+    --carousel-easing: linear;
+    padding: 0 10px;
+    cursor: default;
+}
+
+.h-carousel.auto:not(.is-enhanced) {
+    overflow-x: auto !important;
+}
+
+.h-carousel.auto .carousel-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    will-change: transform;
+    animation-duration: var(--carousel-duration);
+    animation-timing-function: var(--carousel-easing);
+    animation-iteration-count: infinite;
+    animation-play-state: var(--carousel-play-state);
+}
+
+.h-carousel.auto.is-direction-left .carousel-track {
+    animation-name: marquee-left;
+}
+
+.h-carousel.auto.is-direction-right .carousel-track {
+    animation-name: marquee-right;
+}
+
+.h-carousel.auto .carousel-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: var(--carousel-gap);
+    padding-inline-end: var(--carousel-gap);
+}
+
+.platforms {
+	display: flex;
+	gap: 2vw;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.platform {
+	width: var(--platform-width);
+	min-height: var(--platform-height);
+    background: #00000060;
+	border: 1px solid #ffffff66;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 15px;
+	gap: 15px;
+	padding: 30px 10px;
+	backdrop-filter: blur(10px);
+}
+
+.platform p {
+	color: #fff;
+    opacity: 1.0;
+}
+
+.platform > img {
+	height: calc(var(--platform-width) / 7);
+}
+
+.platform .appname {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+.platform .caption {
+	font-size: 1em;
+	text-align: justify;
+	margin: 0 5px;
+}
+
+.platform .action {
+	padding: 20px 30px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 15px;
+	margin: 10px 0;
+    background: #fff;
+    color: #000;
+}
+
+.platform .action:hover {
+	filter: brightness(0.9);
+}
+
+@keyframes marquee-left {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(calc(-1 * var(--carousel-cycle-width)), 0, 0);
+    }
+}
+
+@keyframes marquee-right {
+    from {
+        transform: translate3d(calc(-1 * var(--carousel-cycle-width)), 0, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .app .name img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .h-carousel img, .v-carousel img {
+        width: 40vw;
+    } 
+
+    .platforms {
+		gap: 4vw;
+		flex-direction: column;
+	}
+
+    .platform img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .platform {
+        width: 85vw;
+    }
+}

@@ -46,6 +46,21 @@ h1 {
     border-radius: 22%;
 }
 
+.amber {
+    background: radial-gradient(
+        circle at 10% 20%,
+        #ff9c0b 0px,
+        #fca41f 70px,
+        #f9aa33 150px,
+        #f8ae3f 500px
+    );
+}
+
+.amber a {
+    color: #fff;
+    font-weight: 600;
+}
+
 .app-grid .remote {
     background: url("https://apps.lumaa.fr/assets/images/cider/HeroBanner.png");
     background-size: cover;
