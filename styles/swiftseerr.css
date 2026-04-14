@@ -8,6 +8,7 @@
 
 body {
     background: var(--seerr-bg-purple);
+    color: #fff;
 }
 
 a {
