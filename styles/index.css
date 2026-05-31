@@ -54,6 +54,7 @@ h1 {
         #f9aa33 150px,
         #f8ae3f 500px
     );
+    color: #fff;
 }
 
 .app-grid .amber a {
@@ -68,6 +69,10 @@ h1 {
     background-color: rgba(0, 0, 0, 0.8);
     background-blend-mode: multiply;
     color: #fff;
+}
+
+.app-grid .remote a {
+    color: #e11d48;
 }
 
 .app-grid .fraca {
@@ -127,6 +132,7 @@ h1 {
 
 .app-list .remote {
     background: #0c0a09;
+    color: #fff;
 }
 
 @media screen and (max-width: 1040px) {
