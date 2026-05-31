@@ -86,6 +86,8 @@ h1 {
 
 div.feature {
 	margin-left: calc(50vw - 30vw);
+	margin-top: 20px;
+	margin-bottom: 20px;
 	max-width: calc(60vw + 2px);
 	padding-top: 15px;
 	padding-bottom: 15px;
